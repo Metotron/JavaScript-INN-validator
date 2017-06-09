@@ -5,8 +5,7 @@ function validateINN(number) {
 	if (!/^([0-9]{10}|[0-9]{12})$/.test(number)) return false;
 
 	//Проверка контрольных цифр
-	if (number.length == 10)
-	{
+	if (number.length == 10) {
 		var parse       = number.match(/^(.{9})(.)$/),
 		    controlCode = parse[2],
 		    n           = parse[1].split(''),
@@ -14,8 +13,7 @@ function validateINN(number) {
 		if (checkCode != controlCode)
 			return false;
 	}
-	else
-	{
+	else {
 		var parse        = number.match(/^(.{10})(.)(.)$/),
 		    controlCode1 = parse[2],
 		    controlCode2 = parse[3],
